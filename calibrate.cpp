@@ -60,13 +60,13 @@ int main(int argc, char** argv)
 
     std::cout << "start!" << std::endl;
 
-    if (argc != 3) {
+    if (argc != 2) {
         cerr << endl << "not enough para input" << endl;
-        // return 1;
+        return 1;
     }
 
     ;
-    _system = new devo::System("src/aero_detect/config/config.yaml");
+    _system = new devo::System(argv[1]);
 
     ros::init(argc, argv, "calibator");
     ros::NodeHandle nh;
