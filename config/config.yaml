@@ -1,0 +1,34 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera0 Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+# Camera calibration and distortion parameters (OpenCV) 
+# Camera.fx: 570.3422241210938
+# Camera.fy: 570.3422241210938
+# Camera.cx: 314.5
+# Camera.cy: 235.5
+# old c270
+Camera0.id: 0
+Camera0.fx: 510.00
+Camera0.fy: 521.00
+Camera0.cx: 293.00
+Camera0.cy: 259.00
+
+Camera0.k1: -0.0
+Camera0.k2: 0.0
+Camera0.p1: -0.0
+Camera0.p2: 0.0
+
+Camera0.width: 640
+Camera0.height: 480
+
+# Camera frames per second 
+Camera0.fps: 30.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera0.RGB: 1
+
+
+
