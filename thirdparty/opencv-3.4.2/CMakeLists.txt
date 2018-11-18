@@ -524,7 +524,7 @@ ocv_include_directories(${OPENCV_CONFIG_FILE_INCLUDE_DIR})
 # ----------------------------------------------------------------------------
 set(OPENCV_EXTRA_MODULES_PATH "" CACHE PATH "Where to look for additional OpenCV modules (can be ;-separated list of paths)")
 
-set(OPENCV_EXTRA_MODULES_PATH "" CACHE PATH "../opencv_contrib-3.4.2/module")
+set(OPENCV_EXTRA_MODULES_PATH "" CACHE PATH "../../opencv_contrib-3.4.2/module")
 
 # ----------------------------------------------------------------------------
 #  Autodetect if we are in a GIT repository
