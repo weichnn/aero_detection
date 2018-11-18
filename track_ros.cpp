@@ -54,7 +54,7 @@ int main(int argc, char** argv)
     }
 
     ;
-    _system = new devo::System(argn[1]);
+    _system = new devo::System(argv[1]);
 
     ros::init(argc, argv, "tracker");
 
