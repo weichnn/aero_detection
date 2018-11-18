@@ -6,10 +6,6 @@
 
 namespace devo {
 
-namespace IOWrap {
-class PangolinViewer;
-}
-
 class Tracker;
 class Optimizer;
 
@@ -22,7 +18,7 @@ class System
     ~System();
 
     void addImage(const cv::Mat& img, const cv::Mat& img2, double timestamp);
-    // void addImage_surf(const cv::Mat& img, const cv::Mat& img2, double timestamp);
+    
     void addImage_aruco(const cv::Mat& img, const cv::Mat& img2, double timestamp);
 
     void addImage_aruco(const cv::Mat& img, SE3 &vicon_pose, double timestamp);
@@ -56,8 +52,6 @@ class System
     Optimizer* _optimizer;
 
   private:
-    IOWrap::PangolinViewer* _pangolinViewer;
-
     bool initialization_aruco(FramePtr newFrame);
 };
 

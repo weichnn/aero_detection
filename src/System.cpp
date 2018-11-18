@@ -52,13 +52,12 @@ System::System(const std::string& strSettingsFile)
 
     _tracker = new Tracker();
     _optimizer = new Optimizer();
-    // _pangolinViewer = new IOWrap::PangolinViewer(CAM_GLOBAL[0]->_width, CAM_GLOBAL[0]->_height);
+
 }
 
 System::~System()
 {
     delete _optimizer;
-    // delete _pangolinViewer;
     for(auto it:CAM_GLOBAL)
     {
         delete it;
