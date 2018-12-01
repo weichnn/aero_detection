@@ -109,7 +109,7 @@ System::addImage_aruco(const cv::Mat& img0, SE3 &vicon_pose, double timestamp)
         // std::cout << temp.matrix() << std::endl;
 
         cout << "The image frame pose:" <<  _newFrame->_T_f_w.inverse().matrix() << endl;
-        cout << "The image frame pose:" <<  vicon_pose.matrix() << endl;
+        cout << "The VICON pose:" <<  vicon_pose.matrix() << endl;
         
         _optimizer->optimizeLoop(_newFrame->_T_f_w, vicon_pose);
     }
