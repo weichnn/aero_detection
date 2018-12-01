@@ -104,8 +104,8 @@ Frame::init()
                 Vec3 eigent(t.at<double>(0, 0),t.at<double>(1, 0),t.at<double>(2, 0));
                 _T_f_w = (SE3(M,eigent).inverse());
 
-                cout << _T_f_w.inverse().matrix() << endl;
-                cout << "marker " << markerIds[i] << ": " << t << endl;
+                // cout << _T_f_w.inverse().matrix() << endl;
+                // cout << "marker " << markerIds[i] << ": " << t << endl;
 
             }
             // imshow("out"+std::to_string(count), srcImage);

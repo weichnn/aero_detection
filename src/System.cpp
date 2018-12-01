@@ -104,10 +104,14 @@ System::addImage_aruco(const cv::Mat& img0, SE3 &vicon_pose, double timestamp)
 
     if (_newFrame->_hasMarker)
     {
-        SE3 temp = SE3(Mat33::Identity(),Vec3(1,0,0));
-        SE3 t2 = temp * _newFrame->_T_f_w * temp.inverse();
-        std::cout << temp.matrix() << std::endl;
-        _optimizer->optimizeLoop(_newFrame->_T_f_w, t2);
+        // SE3 temp = SE3(Mat33::Identity(),Vec3(1,0,0));
+        // SE3 t2 = temp * _newFrame->_T_f_w * temp.inverse();
+        // std::cout << temp.matrix() << std::endl;
+
+        cout << "The image frame pose:" <<  _T_f_w.inverse().matrix() << endl;
+        cout << "The image frame pose:" <<  vicon_pose.matrix() << endl;
+        
+        _optimizer->optimizeLoop(_newFrame->_T_f_w, vicon_pose);
     }
     
     delete _newFrame;
