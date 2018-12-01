@@ -11,15 +11,15 @@
 # Camera.cy: 235.5
 # old c270
 Camera0.id: 0
-Camera0.fx: 510.00
-Camera0.fy: 521.00
-Camera0.cx: 293.00
-Camera0.cy: 259.00
+Camera0.fx: 618.6312255859375
+Camera0.fy: 625.4410400390625
+Camera0.cx: 325.1368103027344
+Camera0.cy: 244.43028259277344
 
-Camera0.k1: -0.0
-Camera0.k2: 0.0
-Camera0.p1: -0.0
-Camera0.p2: 0.0
+Camera0.k1: -0.08798329532146454
+Camera0.k2: 0.09049737453460693
+Camera0.p1: -0.00250453082844615
+Camera0.p2: 0.004128620494157076
 
 Camera0.width: 640
 Camera0.height: 480
