@@ -39,7 +39,7 @@ Optimizer::optimizeLoop(SE3 &Tcm, SE3 &Tcv)
 
     vSE3->setId(0);
     vSE3->setMarginalized(false);
-    vSE3->setEstimate( Converter::toSE3Quat(SE3(Mat33::Identity(),Vec3(0.98,0.01,-0.01))));
+    vSE3->setEstimate( Converter::toSE3Quat(SE3(Mat33::Identity(),Vec3(0.0,0.0,-0.0))));
     optimizer.addVertex(vSE3);
 
     for (int i = 0; i < T_vicon.size(); ++i)
