@@ -70,7 +70,7 @@ bool Tracker::findCircleCenter_Color(cv::Mat image_input, Vec3 &result_return)
             }
 
         }
-        imshow("drawing",drawing);
+        // imshow("drawing",drawing);
  
         if(contours.size()!=1)
         {

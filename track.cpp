@@ -70,9 +70,9 @@ int main(int argc, char** argv)
         // }
         else
         {
-            imshow("test",frame0);
+            // imshow("test",frame0);
             // imwrite("image.png",frame0);
-            cvWaitKey(33);
+            // cvWaitKey(33);
             _system->addImage_track(frame0, count);
         }
 

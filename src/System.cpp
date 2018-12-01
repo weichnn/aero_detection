@@ -175,8 +175,8 @@ System::initialization_aruco(FramePtr it)
                 cout << "marker " << markerIds[i] << ": " << t << endl;
 
             }
-            imshow("out"+std::to_string(count), srcImage);
-            cvWaitKey(1);
+            // imshow("out"+std::to_string(count), srcImage);
+            // cvWaitKey(1);
         }
         else
         {
