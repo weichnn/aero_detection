@@ -114,7 +114,7 @@ Frame::init()
         else
         {
             result = false;
-            std::cout << "there is no marker" << std::endl;
+            // std::cout << "there is no marker" << std::endl;
         }
 
         markerIds.clear();
