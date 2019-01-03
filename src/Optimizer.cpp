@@ -44,7 +44,7 @@ Optimizer::optimizeLoop(SE3 &Tcm, SE3 &Tcv)
 
     int interv = 5;
     std::cout << "data size: " << T_vicon.size() << std::endl;
-    for (int i = 0; i < (T_vicon.size()-interv); ++i)
+    for (int i = 0; i < (int(T_vicon.size())-interv); ++i)
     {
         g2o::EdgeSE3Loop* e = new g2o::EdgeSE3Loop();
 		e->T1 = Converter::toSE3Quat(T_camera[i+interv]*T_camera[i].inverse());
