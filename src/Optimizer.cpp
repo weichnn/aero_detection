@@ -42,11 +42,12 @@ Optimizer::optimizeLoop(SE3 &Tcm, SE3 &Tcv)
     vSE3->setEstimate( Converter::toSE3Quat(SE3(Mat33::Identity(),Vec3(0.0,0.0,-0.0))));
     optimizer.addVertex(vSE3);
 
-    for (int i = 0; i < T_vicon.size()-1; ++i)
+    int interv = 10;
+    for (int i = 0; i < T_vicon.size()-interv; ++i)
     {
         g2o::EdgeSE3Loop* e = new g2o::EdgeSE3Loop();
-		e->T1 = Converter::toSE3Quat(T_camera[i]*T_camera[i+1].inverse());
-		e->T2 = Converter::toSE3Quat(T_vicon[i]*T_vicon[i+1].inverse());
+		e->T1 = Converter::toSE3Quat(T_camera[i+interv]*T_camera[i].inverse());
+		e->T2 = Converter::toSE3Quat(T_vicon[i+interv]*T_vicon[i].inverse());
         e->setVertex(0, dynamic_cast<g2o::OptimizableGraph::Vertex*>(optimizer.vertex(0)));
         e->setMeasurement(Vec6::Zero());
         Mat66 Info = Mat66::Identity();
