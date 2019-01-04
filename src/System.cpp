@@ -69,7 +69,7 @@ System::~System()
         delete it;
     }
 
-    image_pose.close();
+    image_file.close();
     vicon_file.close();
 
 }
