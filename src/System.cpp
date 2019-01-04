@@ -49,6 +49,12 @@ System::System(const std::string& strSettingsFile)
                                  )
     );
 
+    image_file.open("imagepose.txt");
+    image_file << std::setprecision(15);
+
+    
+    vicon_file.open("vicon.txt");
+    vicon_file << std::setprecision(15);
 
     _tracker = new Tracker();
     _optimizer = new Optimizer();
@@ -62,6 +68,9 @@ System::~System()
     {
         delete it;
     }
+
+    image_pose.close();
+    vicon_file.close();
 
 }
 
@@ -109,7 +118,21 @@ System::addImage_aruco(const cv::Mat& img0, SE3 &vicon_pose, double timestamp)
         // std::cout << temp.matrix() << std::endl;
 
         cout << "The image frame pose:" <<  _newFrame->_T_f_w.matrix() << endl;
-        cout << "The VICON pose:" <<  vicon_pose.matrix() << endl;
+        cout << "The VICON pose:" <<  vicon_pose.matrix() << endl;  
+
+		image_file << timestamp <<
+			" " << _newFrame->_T_f_w.translation().transpose()<<
+			" " << _newFrame->_T_f_w.so3().unit_quaternion().x()<<
+			" " << _newFrame->_T_f_w.so3().unit_quaternion().y()<<
+			" " << _newFrame->_T_f_w.so3().unit_quaternion().z()<<
+			" " << _newFrame->_T_f_w.so3().unit_quaternion().w() << "\n";
+
+		vicon_file << timestamp <<
+			" " << vicon_pose.translation().transpose()<<
+			" " << vicon_pose.so3().unit_quaternion().x()<<
+			" " << vicon_pose.so3().unit_quaternion().y()<<
+			" " << vicon_pose.so3().unit_quaternion().z()<<
+			" " << vicon_pose.so3().unit_quaternion().w() << "\n";
         
         _optimizer->optimizeLoop(_newFrame->_T_f_w, vicon_pose);
     }

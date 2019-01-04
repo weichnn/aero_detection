@@ -51,6 +51,10 @@ class System
     Tracker* _tracker;
     Optimizer* _optimizer;
 
+
+    std::ofstream image_file;
+    std::ofstream vicon_file;
+
   private:
     bool initialization_aruco(FramePtr newFrame);
 };
